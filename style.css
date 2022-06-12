@@ -1,0 +1,398 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper {
+   width: 90%;
+   margin: auto;
+} 
+
+img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+body {
+    position: relative;
+    font-family: 'Ropa Sans', sans-serif;
+    }
+
+header, main, footer {
+    width: 100%;
+}  
+/* Header */
+header { 
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    height: auto;  
+}
+
+#logo1 {
+   position: relative;
+   width: 10%;
+   height: 5em;
+}
+#logo1 img{
+    width: 100%;
+    height: 100%;
+}
+/* Menu de navigation */
+header nav {
+    position: relative;
+    width: 90%;
+    height: auto;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+header nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color:#76b900;
+}
+
+/* Image principale */
+#pictureBanner{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+#banner {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    background-color: rgba(56, 83, 10, 0.5);
+    /* background: rgba(118, 185, 5, 0.5); */
+}
+#banner p {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+#discover{
+    margin: 10px;
+    padding: 0 7px;
+    border-radius: 10px;
+    background-color: #76b900;
+    border: none;
+}
+#discover a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#discover:hover {
+    background-color: #365403;
+}
+
+#mainImage {
+    width: 100%;
+    height: 300px;
+   
+}
+#mainImage img{
+    height:300px; 
+}
+/* Article et complément d'article */
+
+#articleAside{
+    width: 100%;
+    display: flex;
+    border-bottom: solid 2px  #76b900;
+    position: relative;
+}
+#articleAside::after{
+    content: " ";
+    padding: 10px;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    display: block;
+    position: absolute;
+    background: #76b900;
+    bottom: -20px;
+    left: 50%;
+}
+h1 {
+    display: none;
+}
+article {
+    width: 66%;
+    padding:2%;
+    text-align: justify;
+}
+
+article p {
+    margin-top: 5%;
+}
+
+/* Petit logo à côté du h2 de l'article */
+#miniLogo {
+    background-image: url("./img/logoPetit.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 2em;
+    height: 2em;
+    border-radius: 5px;
+    border: 1px solid #000;
+    float: left;
+    margin-right: 2%;
+}
+
+aside {
+    width: 34%;
+    padding:2%;
+    color: #fff;
+    text-align: justify;
+    background-color: #76b900;
+}
+
+aside h2 {
+    text-align: center;
+}
+
+/* Icones des réseaux sociaux */
+
+#socials{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 5%;
+}
+#socials i:hover{
+	text-shadow: 0px 0px 5px #fff;
+}
+#socials a {
+    color: #fff;
+    font-size: 3em;
+}
+
+
+
+/* Footer: formulaire, galerie, partenaires */
+footer{
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+footer h2{
+    font-size: 1em;
+    margin-bottom:1em;
+    font-weight: bold;
+}
+
+input:first-child{  /* Le premier element de l'input va s'afficher en dessous de l'autre, mais pas les prochains éléments*/
+    display: block;
+}
+
+/* Formulaire de contact */
+
+#name, #email {
+    margin: 5px 5px 0 0;
+    border-radius: 0;
+    border: 1px grey solid; 
+    padding: 5px;
+}
+
+#submit {
+    border-radius: 0;
+    border: none;
+    background-color: #76b900;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+#submit:hover {
+    background-color: #365403;
+}
+/* Galerie */
+
+#galerie figure, #partenaires figure {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+#galerie figure img, #partenaires figure img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    padding: 2%;  
+}
+
+#galerie figure a:hover img {
+    transform: scale(1.5, 1.5);
+}
+
+/* Partenaires */
+
+#partenaires figure img{
+    object-fit: scale-down;
+}
+
+#partenaires figure a:hover img {
+    transform: scale(1.2, 1.2);
+}
+
+/* MEDIA QUERIES */
+/* Version smartphone */
+@media only screen and (max-width:421px) {
+
+#wrapper {
+        width:100%;
+    }
+article h2 {
+    text-align: left;
+}
+
+ #logo1 {
+     width:25%;
+ }
+
+ header {
+     display: flex;
+     justify-content: center;
+ }
+
+ header nav {
+     flex-direction: column;
+     align-items: center;
+     font-size: 1.5em;
+ }
+
+footer {
+    flex-direction: column;
+}
+
+#articleAside {
+    flex-direction: column;
+}
+article, aside {
+    width: 100%;
+}
+footer h2 {
+    font-size:1.5em;
+    padding-top: 2% ;
+    text-align: center;
+}
+#galerie , #partenaires {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#galerie figure, #partenaires figure {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+}
+#galerie figure img, #partenaires figure img {
+    width: 100%;
+    height: 100%;   
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#name, #email, #submit {
+    padding: 1em 6em;
+    font-size: 1em;
+}
+#submit {
+    margin-top: 0.5em;
+}
+}
+
+/* Version tablette */
+
+@media only screen and (min-width: 768px)and (max-width: 979px) {
+
+#wrapper {
+    width:100%;
+}
+header nav {
+    font-size: 1.5em;
+}
+h2 {
+    font-size: 1.5em;
+}
+article h2 {
+    text-align: left;
+}
+
+#articleAside {
+    flex-direction: column;
+}
+article , aside {
+    padding: 1em 2em;
+}
+
+article {
+    width: 100%;
+}
+aside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+aside figure {
+    display: flex;
+    justify-content: center;
+}
+
+aside figure img {
+    width: 50%;
+    height: 50%;
+}
+
+footer {
+    flex-direction: column;
+}
+footer section {
+    width: 100%;
+}
+footer h2 {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 2em 0;
+}
+#contact, #contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#contactForm {
+    padding: 1em 2em;
+}
+#galerie figure, #partenaires figure {
+    justify-content: space-evenly;
+}
+#galerie figure img, #partenaires figure img {
+width: 120px;
+height: 120px;
+}
+
+}
